@@ -12,6 +12,9 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
   const navigate = useNavigate();
+  const openInNewTab = url => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
   return (
     <Container maxW={'5xl'}>
       <Stack
@@ -42,7 +45,7 @@ export default function Home() {
             Shop Now
           </Button>
           <Button rounded={'full'} px={6} 
-            onClick="parent.open('https://github.com/ytingtan/ecomm.git')">
+            onClick={() => openInNewTab('https://github.com/ytingtan/ecomm')}>
             View repo
           </Button>
         </Stack>
